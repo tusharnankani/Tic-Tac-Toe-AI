@@ -7,6 +7,7 @@ Adding a simple AI to the Tic-Tac-Toe Game
 
 ### To view this project on a live terminal:
 - Click [here.](https://repl.it/github/tusharnankani/Tic-Tac-Toe-AI)
+- And then, click on `Run`!
 
 ### *To run it on your PC*:
 * Make sure you have Python 3.7.x or Python 3.8.x installed, if not, click [here](https://www.python.org/downloads/) to install! 
