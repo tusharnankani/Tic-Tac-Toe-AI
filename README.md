@@ -14,7 +14,7 @@ Adding a simple AI to the Tic-Tac-Toe Game
 * Clone this into your Desktop: `git clone "https://github.com/tusharnankani/GamesBuiltUsingPython"`
 * Open Command Line or Terminal
 * Change directory to a respective game: `cd "Desktop\Tic-Tac-Toe-AI"`
-* Run <tic-tac-toe-AI.py>: python `tic-tac-toe-AI.py`
+* Run <tic-tac-toe-AI.py>: `python tic-tac-toe-AI.py`
 * And now have fun! ^_^
 
 
