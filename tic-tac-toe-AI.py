@@ -105,14 +105,16 @@ def CompAI(board, name, choice):
     position = 0
     possibilities = [x for x, letter in enumerate(board) if letter == ' ' and x != 0]
     
-    for i in possibilities:
-        # Creating a copy of the board everytime, placing the move and checking if it wins;
-        # Creating a copy like this  and not this boardCopy = board, since changes to boardCopy changes the original board;
-        boardCopy = board[:]
-        boardCopy[i] = choice
-        if(win_check(boardCopy, choice)):
-            position = i
-            return position
+    # including both X and O, since if computer will win, he will place a choice there, but if the component will win --> we have to block that move
+    for let in ['O', 'X']:
+        for i in possibilities:
+            # Creating a copy of the board everytime, placing the move and checking if it wins;
+            # Creating a copy like this  and not this boardCopy = board, since changes to boardCopy changes the original board;
+            boardCopy = board[:]
+            boardCopy[i] = let
+            if(win_check(boardCopy, let)):
+                position = i
+                return position
 
     openCorners = [x for x in possibilities if x in [1, 3, 7, 9]]
     
