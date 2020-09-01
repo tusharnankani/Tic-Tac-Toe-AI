@@ -9,6 +9,8 @@ Adding a simple AI to the Tic-Tac-Toe Game
 - Click [here.](https://repl.it/github/tusharnankani/Tic-Tac-Toe-AI)
 - And then, click on <kbd>Run</kbd>!
 
+#### NOTE - View [GamesBuiltUsingPython](https://github.com/tusharnankani/GamesBuiltUsingPython)
+
 ### *To run it on your PC*:
 * Make sure you have Python 3.7.x or Python 3.8.x installed, if not, click [here](https://www.python.org/downloads/) to install! 
 * Clone this into your Desktop: `git clone "https://github.com/tusharnankani/GamesBuiltUsingPython"`
