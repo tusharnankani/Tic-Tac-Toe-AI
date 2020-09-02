@@ -167,6 +167,10 @@ def win_check(board, choice):
     or ( board[1] == choice and board[5] == choice and board[9] == choice )
     or ( board[3] == choice and board[5] == choice and board[7] == choice )  )
 
+def delay(mode):
+    if mode == 2:
+        import time
+        time.sleep(2)
 
 def replay():
     #If the users want to play the game again?
@@ -238,7 +242,7 @@ while True:
     if(mode == 1):
         play_game = play()   
     else:
-        ent = input("\nThis is going to be fast! Press Enter for the battle to begin!")
+        ent = input("\nThis is going to be fast! Press Enter for the battle to begin!\n")
         play_game = 1
     
     while play_game:
@@ -323,6 +327,7 @@ while True:
                 #If none of the above is possible, next turn of Player 2;       
                 else:
                     turn = p1_name
+        
                     
     #If the users want to play the game again?                
     if replay():
