@@ -1,13 +1,4 @@
-####	TIC TAC TOE - ADVANCED	####
-##	    Tushar Nankani   	##
-
-'''
-Specifications:
-2 players will be able to play the game (both sitting at the same computer);
-The board will be printed out every time a player makes a move
-#THIS ADVANCED VERSION WILL ALSO PRINT A BOARD SIMULTANEOUSLY: STATING THE REMAINING MOVES.
-
-'''
+####	TIC TAC TOE    ####
 
 #START;
 
@@ -206,21 +197,33 @@ while True:
     
 
 
-    print("\n0. 1-player game with the computer.")
-    print("1. 2-player game.")
-    mode = int(input("\nSelect an option [0] or [1]: "))
-    if mode:
+    print("\n[0]. Player vs. Computer")
+    print("[1]. Player vs. Player")
+    print("[2]. Computer vs. Computer")
+    mode = int(input("\nSelect an option [0]-[2]: "))
+    if mode == 1:
         #Asking Names;
         p1_name, p2_name = names()
+        # Asking Choices; Printing choices; X or O;
+        p1_choice, p2_choice = choice()
+        print(f"\n{p1_name}:", p1_choice)
+        print(f"{p2_name}:", p2_choice)
 
-    else:
+    elif mode == 0:
         p1_name = input("\nEnter NAME of PLAYER who will go against the Computer:\t").capitalize()
         p2_name = "Computer"
+        # Asking Choices; Printing choices; X or O;
+        p1_choice, p2_choice = choice()
+        print(f"\n{p1_name}:", p1_choice)
+        print(f"{p2_name}:", p2_choice)
+    
+    else:
+        p1_name = "Computer1"
+        p2_name = "Computer2"
+        p1_choice, p2_choice = "X", "O"
+        print(f"\n{p1_name}:", p1_choice)
+        print(f"\n{p2_name}:", p2_choice)
 
-    # Asking Choices; Printing choices; X or O;
-    p1_choice, p2_choice = choice()
-    print(f"\n{p1_name}:", p1_choice)
-    print(f"{p2_name}:", p2_choice)
 
     
     #Printing randomly who will go first;
@@ -232,7 +235,11 @@ while True:
     print(f"\n{turn} will go first!")
     
     #Asking the user, if ready to play the game; Output will be True or False;
-    play_game = play()    
+    if(mode == 1):
+        play_game = play()   
+    else:
+        ent = input("\nThis is going to be fast! Press Enter for the battle to begin!")
+        play_game = 1
     
     while play_game:
         
@@ -244,7 +251,11 @@ while True:
             display_board(theBoard, available)
 
             #Position of the input;
-            position = player_choice(theBoard, p1_name, p1_choice)
+            if mode == 1:
+                position = player_choice(theBoard, p2_name, p2_choice)
+            else:
+                position = CompAI(theBoard, p2_name, p2_choice)
+                print(f'\n{p2_name} ({p2_choice}) has placed on {position}\n')
             
             #Replacing the ' ' at *position* to *p1_choice* in *theBoard* list; 
             place_marker(theBoard, available, p1_choice, position)
@@ -253,7 +264,10 @@ while True:
             if win_check(theBoard, p1_choice):
                 display_board(theBoard, available)
                 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-                print(f'\n\nCONGRATULATIONS {p1_name}! YOU HAVE WON THE GAME!\n\n')
+                if(mode):
+                    print(f'\n\nCONGRATULATIONS {p1_name}! YOU HAVE WON THE GAME!\n\n')
+                else:
+                    print('\n\nTHE Computer HAS WON THE GAME!\n\n')
                 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
                 play_game = False
                 
@@ -278,7 +292,7 @@ while True:
             display_board(theBoard, available)
 
             #Position of the input;
-            if(mode):
+            if(mode == 1):
                 position = player_choice(theBoard, p2_name, p2_choice)
             else:
                 position = CompAI(theBoard, p2_name, p2_choice)
