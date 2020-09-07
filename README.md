@@ -5,6 +5,12 @@
 Adding a simple AI to the Tic-Tac-Toe Game 
 - This project is an upgraded version to the basic [2 - player Tic-Tac-Toe Game](https://github.com/tusharnankani/GamesBuiltUsingPython/tree/master/TicTacToe_Game) that was built earlier.
 
+### *Features*:
+* Player vs. Player
+* Computer vs. Player
+* Computer vs. Computer (*just for fun*)
+
+
 ### To view this project on a live terminal:
 - Click [here.](https://repl.it/github/tusharnankani/Tic-Tac-Toe-AI)
 - And then, click on <kbd>Run</kbd>!
